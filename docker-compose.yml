@@ -1,0 +1,22 @@
+# Optional. Local development does not require Docker -- see README.md for
+# the plain `uvicorn` / `npm run dev` workflow, which is faster to iterate on.
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - FRONTEND_ORIGIN=http://localhost:5173
+      - VIZ_MAX_POINTS=150000
+      - MAX_UPLOAD_MB=300
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend

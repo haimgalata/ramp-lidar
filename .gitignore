@@ -1,0 +1,22 @@
+# Backend
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.pytest_cache/
+backend/uvicorn.log
+backend/.env
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/vite.log
+frontend/.env
+
+# Sample data output (regenerate with sample_data/generate_sample_ramp.py)
+sample_data/*.ply
+sample_data/*.pcd
+
+# OS/editor
+.DS_Store
+*.pyc
+frontend/tsconfig.tsbuildinfo
